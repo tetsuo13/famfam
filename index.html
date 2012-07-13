@@ -1,0 +1,37 @@
+<!--
+// http://www.shiffman.net/2011/12/20/night-1-zoom-and-pan-in-2d/
+// http://www.webmuse.co.uk/blog/simple-class-in-processing-js/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>FamFam</title>
+
+<style>
+html, body {
+    margin: 0;
+}
+</style>
+
+<script src="js/processing.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+(function(famfam, $) {
+    var canvasId_ = 'board';
+
+    famfam.resizeCanvas = function() {
+        $('#' + canvasId_).width($(document).width());
+    };
+})(window.famfam = window.famfam || {}, jQuery);
+
+$(function() {
+    //famfam.resizeCanvas();
+    $(window).resize(famfam.resizeCanvas);
+    console.log($(document).width());
+});
+</script>
+</head>
+<body>
+<canvas id="board" datasrc="js/tree.pde"></canvas>
+</body>
+</html>
